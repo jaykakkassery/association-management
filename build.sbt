@@ -5,6 +5,9 @@ version := "1.0-SNAPSHOT"
 
 lazy val root = (project in file(".")).enablePlugins(PlayScala)
 
+val circeVersion = "0.12.3"
+
+
 scalaVersion := "2.12.8"
 
 libraryDependencies += "org.scalatestplus.play" %% "scalatestplus-play" % "5.0.0" % Test
@@ -14,6 +17,11 @@ libraryDependencies ++= Seq(
   "com.typesafe.play" %% "play-slick-evolutions" % "4.0.0",
   "mysql" % "mysql-connector-java" % "8.0.15"
 )
+libraryDependencies ++= Seq(
+  "io.circe" %% "circe-core",
+  "io.circe" %% "circe-generic",
+  "io.circe" %% "circe-parser"
+).map(_ % circeVersion)
 
 // Adds additional packages into Twirl
 //TwirlKeys.templateImports += "net.jptech.controllers._"
