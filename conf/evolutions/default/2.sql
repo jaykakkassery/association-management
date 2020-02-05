@@ -1,4 +1,4 @@
--- User schema
+-- Association schema
 
 -- !Ups
 

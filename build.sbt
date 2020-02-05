@@ -5,6 +5,7 @@ version := "1.0-SNAPSHOT"
 
 lazy val root = (project in file(".")).enablePlugins(PlayScala)
 
+
 val circeVersion = "0.12.3"
 
 
@@ -22,6 +23,9 @@ libraryDependencies ++= Seq(
   "io.circe" %% "circe-generic",
   "io.circe" %% "circe-parser"
 ).map(_ % circeVersion)
+javaOptions in Universal ++= Seq(
+  "-Dpidfile.path=/dev/null"
+)
 
 // Adds additional packages into Twirl
 //TwirlKeys.templateImports += "net.jptech.controllers._"
