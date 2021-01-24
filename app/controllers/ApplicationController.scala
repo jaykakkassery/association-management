@@ -79,6 +79,14 @@ class ApplicationController @Inject()(cc: ControllerComponents,
     }
   }
 
+  def listUserPerformance() = Action.async { implicit request: Request[AnyContent] =>
+    userPerformanceService.listUserPerformances map { associations =>
+      val a = associations.asJson.toString()
+      logger.warn(s"${a}")
+      Ok(a)
+    }
+  }
+
   def addUserPerformance() = Action.async { implicit request: Request[AnyContent] =>
 
     implicit val decoder: Decoder[UserPerformance] = deriveDecoder[UserPerformance]
@@ -87,7 +95,6 @@ class ApplicationController @Inject()(cc: ControllerComponents,
     val bodyAsJson = request.body.asJson.get.toString()
     decode[UserPerformance](bodyAsJson) match {
       case Right(userPerformance) => {
-        println(userPerformance)
         userPerformanceService.addUserPerformance(userPerformance).map( _ => Redirect(routes.ApplicationController.index()))
       }
       case Left(ex) => {

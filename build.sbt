@@ -8,14 +8,13 @@ lazy val root = (project in file(".")).enablePlugins(PlayScala)
 
 val circeVersion = "0.12.3"
 
-
-scalaVersion := "2.12.8"
+scalaVersion := "2.13.1"
 
 libraryDependencies += "org.scalatestplus.play" %% "scalatestplus-play" % "5.0.0" % Test
 libraryDependencies ++= Seq(
   guice,
-  "com.typesafe.play" %% "play-slick" % "4.0.0",
-  "com.typesafe.play" %% "play-slick-evolutions" % "4.0.0",
+  "com.typesafe.play" %% "play-slick" % "5.0.0",
+  "com.typesafe.play" %% "play-slick-evolutions" % "5.0.0",
   "mysql" % "mysql-connector-java" % "8.0.15"
 )
 libraryDependencies ++= Seq(

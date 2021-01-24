@@ -12,6 +12,8 @@ POST    /addAssociation             controllers.ApplicationController.addAssocia
 POST    /addUserPerformance          controllers.ApplicationController.addUserPerformance
 
 GET    /listAssociation             controllers.ApplicationController.listAssociation
+GET    /listUserPerformance         controllers.ApplicationController.listUserPerformance
+
 
 
 # Map static resources from the /public folder to the /assets URL path

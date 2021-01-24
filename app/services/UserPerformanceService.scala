@@ -1,7 +1,7 @@
 package services
 
 import com.google.inject.Inject
-import models.{UserPerformance, UserPerformances}
+import models.{UserPerformance, UserPerformanceDetail, UserPerformances}
 
 import scala.concurrent.Future
 
@@ -19,7 +19,7 @@ class UserPerformanceService @Inject() (userPerformances: UserPerformances) {
     userPerformances.get(id)
   }
 
-  def listAllAssociations: Future[Seq[UserPerformance]] = {
+  def listUserPerformances: Future[Seq[UserPerformanceDetail]] = {
     userPerformances.listAll
   }
 }
