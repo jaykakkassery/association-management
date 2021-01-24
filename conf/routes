@@ -8,7 +8,9 @@ GET     /                           controllers.ApplicationController.index
 POST    /add                        controllers.ApplicationController.addUser
 GET     /delete/:id                 controllers.ApplicationController.deleteUser(id : Long)
 
-GET    /addAssociation             controllers.ApplicationController.addAssociation
+POST    /addAssociation             controllers.ApplicationController.addAssociation
+POST    /addUserPerformance          controllers.ApplicationController.addUserPerformance
+
 GET    /listAssociation             controllers.ApplicationController.listAssociation
 
 
